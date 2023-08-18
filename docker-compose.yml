@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  minecraft-server:
+    image: minecraft:1.20.1
+    ports:
+    - "25565:25565"
+    restart: unless-stopped
+    volumes:
+     - /var/minecraft/data/world:/minecraft/world
+     - /var/minecraft/data/mods:/minecraft/mods
+     - /var/minecraft/data/plugins:/minecraft/plugins
+     - /var/minecraft/data/server.properties:/minecraft/server.properties
